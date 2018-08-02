@@ -41,7 +41,7 @@ class DocFetcher(Wox):
 						"Title": doc.getFilename(),
 						"SubTitle":filePath,
 						"IconPath":"Images/app.ico",
-						"ContextData":filePath,
+						# "ContextData":filePath,
 						"JsonRPCAction":{
 							"method": "openFile",
 							#参数必须以数组的形式传过去
@@ -74,9 +74,9 @@ class DocFetcher(Wox):
 			"SubTitle":data,
 			"IconPath":"Images/app.ico",
 			"JsonRPCAction":{
-				"method": "Wox.ShellRun",
+				"method": "Wox.ChangeQuery",
 				#参数必须以数组的形式传过去
-				"parameters":["explorer.exe"],
+				"parameters":[data, True],
 				#是否隐藏窗口
 				"dontHideAfterAction":True
 			}
